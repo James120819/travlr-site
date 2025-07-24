@@ -14,7 +14,7 @@ app.set('view engine', 'hbs');
 hbs.registerPartials(path.join(__dirname, 'app_server', 'views', 'partials'));
 
 app.use(express.static(path.join(__dirname, 'public')));
-app.use('/', mainRouter);
+app.use('/', indexRouter);
 app.use('/travel', travelRouter);
 
 
@@ -27,20 +27,22 @@ const client = new MongoClient(uri, {
         deprecationErrors: true,
     }
 });
+
+let db;
+
 async function connectToDB() {
     try {
         await client.connect();
+        db = client.db("travlr");
         console.log("Connected to MongoDB!");
-
-        await client.db("admin").command({ ping: 1});
-        console.log(" Pinged your development. You are connected to MongoDB");
     } catch (err) {
         console.error("MongoDB connection error:", err);
     }
 }
 connectToDB();
-app.use(express.static('public'));
+
 app.listen(PORT, () => {
     console.log(`Server is running at http://localhost:${PORT}`);
 });
 
+module.exports = { db };
