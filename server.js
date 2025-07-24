@@ -4,7 +4,7 @@ const hbs = require('hbs');
 const { MongoClient, ServerApiVersion } = require('mongodb');
 const app = express();
 const mainRouter = require('./app_server/routes/main');
-const travelRouter = require('./app_server/routes/travel');
+
 
 
 const PORT = process.env.PORT || 3000;
@@ -14,8 +14,8 @@ app.set('view engine', 'hbs');
 hbs.registerPartials(path.join(__dirname, 'app_server', 'views', 'partials'));
 
 app.use(express.static(path.join(__dirname, 'public')));
-app.use('/', indexRouter);
-app.use('/travel', travelRouter);
+app.use('/', mainRouter);
+
 
 
 
