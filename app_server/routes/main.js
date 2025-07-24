@@ -1,32 +1,14 @@
-const express = require('express');
+const express = requre('express');
 const router = express.Router();
+const controller = require('../controllers/main);
 
-router.get('/', function (req, res) {
-    res.render('index', { title: 'Travlr Getaways' });
-});
+router.get('/', controller.index);
 
-router.get('/about', function (req, res) {
-    res.render('about', { title: 'About' });
-});
-
-router.get('/rooms', function (req, res) {
-    res.render('rooms', { title: 'Rooms' });
-});
-
-router.get('/meals', function (req, res) {
-    res.render('meals', { title: 'Meals' });
-});
-
-router.get('/travel', function (req, res) {
-    res.render('travel', { title: 'Travel' });
-});
-
-router.get('/contact', function (req, res) {
-    res.render('contact', { title: 'Contact' });
-});
-
-router.get('/news', function (req, res) {
-    res.render('news', { title: 'News' });
-});
+router.get('/about', controller.about);
+router.get('/contact', controller.contact);
+router.get('/meals', controller.contact);
+router.get('/news', controller.news);
+router.get('/rooms', controller.rooms);
+router.get('/travel', controller.travel);
 
 module.exports = router;
