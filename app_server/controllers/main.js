@@ -1,48 +1,48 @@
-const index = (req, res) => {
+module.exports.index = function(req, res) {
     res.render('index', {
-        title: 'Home',
-        pageHeader: {
-            title: 'Welcome to Travlr Getaways',
-            strapline: 'Your adventure starts now!'
-        }
+        title: 'Travlr Getaways',
+        tagline: 'Discover the space of relaxation.'
     });
 };
 
-const about = (req, res) => {
+module.exports.about = function(req, res) {
     res.render('about', {
-        title: 'About'
+        title: 'About',
+        tagline: 'Discover more about your Travlr Getaway.'
     });
 };
 
-const contact = (req, res) => {
+module.exports.contact = function(req, res) {
     res.render('contact', {
-        title: 'Contact'
+        title: 'Contact',
+        tagline: 'Reach out to us with any concerns or questions.'
     });
 };
 
-const rooms = (req, res) => {
-    res.render('rooms', {
-        title: 'Rooms'
-    });
-};
-
-const news = (req, res) => {
-    res.render('news', {
-        title: 'News'
-    });
-};
-
-const meals = (req, res) => {
+module.exports.meals = function(req, res) {
     res.render('meals', {
-        title: 'Meals'
+        title: 'Meals',
+        tagline: 'Try our meal options!'
     });
 };
 
-module.exports = {
-    index,
-    about,
-    contact,
-    rooms,
-    news,
-    meals
+module.exports.news = function(req, res) {
+    res.render('news', {
+        title: 'News',
+        tagline: 'Stay informed for updates and news.'
+    });
+};
+
+module.exports.rooms = function(req, res) {
+    res.render('rooms', {
+        title: 'Rooms',
+        tagline: 'Checkout our rooms designed for your comfort.'
+    });
+};
+
+module.exports.travel = function(req, res) {
+    res.render('travel', {
+        title: 'Travel',
+        tagline: 'Explore your travel destination.'
+    });
 };
