@@ -31,15 +31,17 @@ const client = new MongoClient(uri, {
 let db;
 
 async function connectToDB() {
-    try {
-        await client.connect();
-        db = client.db("travlr");
-        console.log("Connected to MongoDB!");
-    } catch (err) {
-        console.error("MongoDB connection error:", err);
-    }
+   try {
+    await client.connect();
+    db = client.db("travlr");
+    console.log("Connected to MongoDB!");
+   } catch (err) {
+      console.error("MongoDB connection error:", err);
+   }
 }
 connectToDB();
+
+
 
 app.listen(PORT, () => {
     console.log(`Server is running at http://localhost:${PORT}`);
