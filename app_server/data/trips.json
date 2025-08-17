@@ -1,0 +1,20 @@
+[
+    {
+        "title": "Gale Reef",
+        "image": "/images/reef1.jpg",
+        "description1": "Discover the beautiful views of Gale Reef.",
+        "description2": "Experienced and non-experienced divers could enjoy the experience!"
+    },
+    {
+        "title": "Dawson's Reef",
+        "image": "/images/reef2.jpg",
+        "description1": "This is a beautiful experience for divers.",
+        "description2": "Guide tours are available."
+    },
+    {
+        "title": "Claire's Reef",
+        "image": "/images/reef3.jpg",
+        "description1": "Beautiful vibrant environments.",
+        "description2": "This is a great aspect for nature and underwater discoveries throughout your trip!"
+    }
+]

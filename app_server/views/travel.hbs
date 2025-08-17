@@ -1,0 +1,15 @@
+{{!<layout}}
+
+<h1>{{title}}</h1>
+<p>{{tagline}}</p>
+
+<div class="trips-container">
+	{{#each trips}}
+	  <div class="trip-card">
+		<h2>{{title}}</h2>
+		<img src="{{image}}" alt="{{title}}" style="width: 300px; height: auto;">
+		<p>{{description1}}</p>
+		<p>{{description2}}</p>
+	</div>
+   {{/each}}
+</div>

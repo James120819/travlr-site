@@ -1,0 +1,42 @@
+<h1>Trips</h1>
+
+<!-- Add / Edit Form -->
+<div class="card">
+  <h3>{{ editingId ? 'Edit Trip' : 'Add Trip' }}</h3>
+
+  <label>Name</label>
+  <input [(ngModel)]="form.name" placeholder="Name" />
+
+  <label>Continent</label>
+  <input [(ngModel)]="form.continent" placeholder="Continent" />
+
+  <label>Category</label>
+  <input [(ngModel)]="form.category" placeholder="Category" />
+
+  <label>Image URL</label>
+  <input [(ngModel)]="form.image" placeholder="https://…" />
+
+  <label>Description</label>
+  <textarea [(ngModel)]="form.description" rows="3"></textarea>
+
+  <div class="actions">
+    <button (click)="save()">{{ editingId ? 'Update' : 'Add' }}</button>
+    <button (click)="cancel()" type="button">Cancel</button>
+  </div>
+</div>
+
+<!-- Trip List -->
+<div class="grid">
+  <div class="trip" *ngFor="let t of trips">
+    <img [src]="t.image" alt="{{ t.name }}" />
+    <div class="info">
+      <h4>{{ t.name }}</h4>
+      <div class="meta">{{ t.continent }} · {{ t.category }}</div>
+      <p>{{ t.description }}</p>
+    </div>
+    <div class="row-actions">
+      <button (click)="startEdit(t)">Edit</button>
+      <button (click)="remove(t._id!)">Delete</button>
+    </div>
+  </div>
+</div>
