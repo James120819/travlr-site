@@ -1,8 +1,14 @@
+#Dependencies 
 node_modules/
+app_server/node_modules/
+angular-spa/node_modules/
+
+#Build output
 dist/
+app_server/dist/
+angular-spa/dist/
+
+# misc
 *.zip
-.env
-node_modules/
-node_modules/
-dist/
+#Environment files
 .env

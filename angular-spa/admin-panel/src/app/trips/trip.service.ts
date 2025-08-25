@@ -11,6 +11,14 @@ export class TripService {
   private baseUrl = '/api/trips';
   private json = new HttpHeaders({ 'Content-Type': 'application/json' });
 
+  private getAuthHeaders(): HttpHeaders {
+    const token = localStorage.getItem('token');
+    return new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer ${token}'
+    });
+  }
+
   getTrips(): Observable<Trip[]> {
     return this.http.get<Trip[]>(this.baseUrl)
       .pipe(catchError(this.handleError('getTrips')));
