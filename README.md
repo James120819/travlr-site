@@ -1,6 +1,7 @@
 # travlr-site
 This is a travel booking web application project
-Architecture
+
+Architecture:
 
 In this project, I worked with both traditional HTML and JavaScript using express for backend rendering and a modern single page application with angular for the frontend. While express HTML is good for fast rendering and simple routing, angular offers a dynamic user side experience with efficient data handling and reactivity. The backend used MongoDB, a NoSQL database, because it provides flexibility in data structure and scales well for dynamic travel data, especially with JSON style documents.
 
